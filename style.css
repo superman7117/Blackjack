@@ -88,7 +88,7 @@ button {
   background-color: brown;
   align-items: center;
   width:      100%;
-  height:     500%;
+  height:     50%;
   z-index:    10;
   top:        40%;
   left:       0;
@@ -96,4 +96,18 @@ button {
   color: white;
   font-family: Lobster;
   font-size: 8vw;
+}
+.solution {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);;
+  align-items: center;
+  width:      100%;
+  height:     30%;
+  z-index:    10;
+  top:        40%;
+  left:       0;
+  position:   fixed;
+  color: green;
+  font-family: Lobster;
+  font-size: 12vw;
 }
