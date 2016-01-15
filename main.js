@@ -9,6 +9,8 @@ $(document).ready(function(){
   var dealerHand =[];
   var playerAces = 0;
   var dealerAces = 0;
+  var hasDealt = false;
+  var win = false;
   var bucket = [
     {card: '', cardVal: 2},{card: '', cardVal: 2},{card: '', cardVal: 2},{card: '', cardVal: 2},
     {card: '', cardVal: 3},{card: '', cardVal: 3},{card: '', cardVal: 3},{card: '', cardVal: 3},
@@ -30,6 +32,8 @@ $(document).ready(function(){
   })
 
   function shuffle(){
+    if (win) {return;}
+    $('.outOfCards').remove();
     mapBucket = bucket.map(function(x) {
       return x;
     })
@@ -39,6 +43,7 @@ $(document).ready(function(){
     dealerAces = 0;
     playerHand = [];
     dealerHand = [];
+    hasDealt = false;
   }
 
 
@@ -50,6 +55,8 @@ $(document).ready(function(){
   }
 
   function deal(){
+    if (win) {return;}
+    hasDealt=true;
     $('.dealer').remove();
     $('.player').remove()
     playerAces = 0;
@@ -83,7 +90,9 @@ $(document).ready(function(){
   }
 
   function dealingP(){
+    if(!hasDealt) {return;}
     var dealing = picker()
+    if(!dealing) {reshuffle()}
     playerHand.push(dealing.cardVal)
     if (dealing.cardVal === 11){
       playerAces += 1;
@@ -95,6 +104,7 @@ $(document).ready(function(){
   }
 
   function stay(){
+    if(!hasDealt) {return;}
     $('#dealerRow').children().last().remove()
     dealingD();
   }
@@ -170,9 +180,22 @@ $(document).ready(function(){
     }
     else { dealingD(); }
   }
-
+  function reshuffle(){
+    $('<div>').addClass("outOfCards")
+    .append('Out of cards!</br> Click - New Deck').appendTo('body');
+  }
   function playAgain(sol){
-    $('body').append('<div>').addClass()
+    hasDealt = false;
+    $('.darken').addClass('winnerCard').appendTo('body');
+    $('<div>').addClass("outOfCards")
+    .append('Out of cards!</br> Click - New Deck').appendTo('body');
+
+    win = true;
+    setTimeout(function(){
+      $('.darken').removeClass('winnerCard');
+      $('.dealer').remove();
+      win = false;
+  } ,3000)
   }
 
 })
