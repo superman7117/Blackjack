@@ -1,0 +1,14 @@
+body {
+  background-color: green;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dealer, .player {
+  background-color: black;
+  height: 20vw;
+  width: 30vw;
+  border: 1px solid white;
+  color: white;
+  font-size: 4em;
+}
