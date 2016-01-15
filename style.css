@@ -1,14 +1,77 @@
 body {
   background-color: green;
+  background-image: url(https://lh4.googleusercontent.com/-ie9WtRMI8FI/U_8gDQXWXfI/AAAAAAAAS2M/h_ldXajpCYA/freedom.gif);
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+}
+.darken {
+  background-color: rgba(000, 0, 0, 0.5);;
+  width:      100%;
+  height:     100%;
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+#header {
+  margin-top: 5vw;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  width: 20vw;
+  height: 10vw;
+  border-radius: 30%;
+  border: 11px solid darkgreen;
+  font-size: 2em;
+}
+
+#dealBTN {
+  background-color:
+}
+
+.cardPlace {
+  margin-top: 5vw;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  color: white;
+  font-family: Lobster;
+  font-size: 4em;
+}
+#dealerCard, #playerCard {
+  text-align: center;
+}
+#dealerRow, #playerRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 45vw;
+  flex-wrap: wrap;
+}
+.down{
+  background-image: url(https://media.giphy.com/media/b5ujszyZhfZS0/giphy.gif);
+  background-position: center;
+  background-size: cover;
+
 }
 .dealer, .player {
+  margin-top: 2vw
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
   background-color: black;
-  height: 20vw;
-  width: 30vw;
+  height: 30vw;
+  width: 20vw;
   border: 1px solid white;
   color: white;
-  font-size: 4em;
+  font-size: 1em;
 }
